@@ -20,6 +20,16 @@ python3 -m pip install -e .
 The editable install registers the `award-scan` command and makes future source
 changes available immediately without reinstalling the package.
 
+Launch the interactive dashboard with:
+
+```bash
+streamlit run app.py
+```
+
+The dashboard includes cached award searches, route controls, CPP filtering,
+and transfer mappings for Amex Platinum/Gold, Chase Sapphire Preferred, and
+Capital One Venture X.
+
 ## Configuration
 
 Set these environment variables before running a live scan:
@@ -87,6 +97,10 @@ ruff check .
 ```
 
 All external API calls are mocked in the tests, so the test suite does not require live credentials or network access.
+
+If the dashboard reports that `api.seats.aero` cannot be resolved, the issue is
+local DNS or network access rather than an API credential. Check your internet
+connection, VPN, firewall, and DNS settings before retrying.
 
 ## Continuous Integration
 
