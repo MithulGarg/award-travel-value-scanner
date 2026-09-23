@@ -1,0 +1,4 @@
+pytest
+requests
+ruff
+click
